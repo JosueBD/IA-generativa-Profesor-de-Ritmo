@@ -1,36 +1,28 @@
-name: CI/CD Pipeline
+name: Deploy to GitHub Pages
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
+
       - name: Install dependencies
         run: npm install
+
       - name: Build
         run: npm run build
-      - name: Set up Python
-        uses: actions/setup-python@v4
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          python-version: '3.9'
-      - name: Install Python dependencies
-        run: pip install music21 librosa numpy
-      - name: Run tests
-        run: npm test
-      - name: Notify team
-        if: success()
-        uses: slackapi/slack-github-action@v1.23.0
-        with:
-          slack-bot-token: ${{ secrets.SLACK_BOT_TOKEN }}
-          channel-id: 'project-channel'
-          text: 'New build successful! Check the latest changes.'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
