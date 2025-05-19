@@ -1,0 +1,23 @@
+{
+  "es": {
+    "translation": {
+      "title": "Profesor de Ritmo",
+      "description": "Aprende música gratis con ejercicios interactivos y partituras.",
+      "donate": "Donar"
+    }
+  },
+  "he": {
+    "translation": {
+      "title": "מורה לקצב",
+      "description": "למד מוזיקה בחינם עם תרגילים אינטראקטיביים ותווים.",
+      "donate": "תרום"
+    }
+  },
+  "en": {
+    "translation": {
+      "title": "Rhythm Teacher",
+      "description": "Learn music for free with interactive exercises and sheet music.",
+      "donate": "Donate"
+    }
+  }
+}
