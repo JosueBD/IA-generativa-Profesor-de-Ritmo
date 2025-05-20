@@ -14,8 +14,8 @@ Estructura del Proyecto
 
 /src: Código fuente (React, JavaScript).
 /backend: Lógica en Python para IA y procesamiento musical.
-/docs: Guías y outputs de NotebookLM (PDFs, MP3s).
 /i18n: Archivos de traducción multilingüe.
+/public: Archivos estáticos para la web.
 
 Cómo Contribuir
 
@@ -25,18 +25,20 @@ Donaciones: Apoya vía PayPal o cripto-wallets (enlaces en la web).
 
 Instalación
 
-Clona el repositorio: git clone https://github.com/usuario/profesor-de-ritmo.git
+Clona el repositorio: git clone https://github.com/JosueBD/IA-generativa-Profesor-de-Ritmo.git
 Instala dependencias: npm install
 Inicia la aplicación: npm start
-Configura el backend: pip install -r requirements.txt y ejecuta python main.py
+Configura el backend: pip install -r requirements.txt y ejecuta python backend/main.py
+Para la app móvil, instala Capacitor: npm install @capacitor/core @capacitor/cli @capacitor/android @capacitor/ios, luego sigue las instrucciones en capacitor.config.json.
 
 Tecnologías
 
 Frontend: React, VexFlow (partituras), Tone.js (audio), i18next (multilingüe).
-Backend: Python, music21 (análisis musical), librosa (procesamiento de audio).
-IA: API de Gemini (o alternativa open-source) para lecciones dinámicas.
+Backend: Python, music21 (análisis musical), librosa (procesamiento de audio), FastAPI (API).
 Automatización: GitHub Actions para despliegues y notificaciones.
 
+Acceso en Regiones Restringidas
+Recomendamos usar ProtonVPN (https://protonvpn.com) para acceder a la aplicación en regiones con restricciones de internet.
 Próximos Pasos
 
 Desarrollar ejercicios interactivos para solfeo y dictados.
@@ -44,5 +46,3 @@ Integrar soporte offline (PDFs, MP3s descargables).
 Añadir gamificación (insignias, certificados).
 
 ¡Únete para llevar la música a todos los rincones del mundo!
-
-
