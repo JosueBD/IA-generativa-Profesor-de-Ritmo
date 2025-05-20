@@ -21,10 +21,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Verify dependencies
+        run: npm list
+
       - name: Build
         run: npm run build
         env:
           VITE_BASE_URL: /IA-generativa-Profesor-de-Ritmo/
+
+      - name: Check build output
+        run: ls -la dist
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
