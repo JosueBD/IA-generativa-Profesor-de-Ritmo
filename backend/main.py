@@ -1,9 +1,20 @@
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import music21
 import numpy as np
 import librosa
 import json
 
-# Generar ejercicios de teoría musical
+app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 def generate_theory_exercise(level):
     if level == 'beginner':
         return {
@@ -14,7 +25,6 @@ def generate_theory_exercise(level):
         }
     return {}
 
-# Generar ejercicio de solfeo
 def generate_solfege_exercise():
     stream = music21.stream.Stream()
     stream.append(music21.note.Note('C4', quarterLength=1))
@@ -23,13 +33,11 @@ def generate_solfege_exercise():
     stream.write('midi', 'exercise.mid')
     return {'type': 'solfege', 'file': 'exercise.mid', 'task': 'Canta las notas en orden.'}
 
-# Analizar audio para identificar instrumentos
 def analyze_audio(audio_file):
     y, sr = librosa.load(audio_file)
     onset_env = librosa.onset.onset_strength(y=y, sr=sr)
-    return {'instruments': ['piano'], 'confidence': 0.8}  # Ejemplo simplificado
+    return {'instruments': ['piano'], 'confidence': 0.8}
 
-# Generar lección completa
 def generate_lesson(level, language='es'):
     lesson = {
         'theory': generate_theory_exercise(level),
@@ -38,10 +46,13 @@ def generate_lesson(level, language='es'):
         'rhythmic_dictation': {'task': 'Escribe el ritmo de 4/4'},
         'melodic_dictation': {'task': 'Escribe la melodía en C mayor'}
     }
-    with open(f'lesson_{language}.json', 'w', encoding='utf-8') as f:
-        json.dump(lesson, f, ensure_ascii=False, indent=2)
+    return lesson
+
+@app.get("/lesson/{level}/{language}")
+async def get_lesson(level: str, language: str):
+    lesson = generate_lesson(level, language)
     return lesson
 
 if __name__ == '__main__':
-    lesson = generate_lesson('beginner', 'es')
-    print(json.dumps(lesson, indent=2, ensure_ascii=False))
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
