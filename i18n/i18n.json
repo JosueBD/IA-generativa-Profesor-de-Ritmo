@@ -3,21 +3,120 @@
     "translation": {
       "title": "Profesor de Ritmo",
       "description": "Aprende música gratis con ejercicios interactivos y partituras.",
-      "donate": "Donar"
+      "donate": "Donar",
+      "theory": "Teoría Musical",
+      "solfege": "Solfeo",
+      "harmony": "Armonía",
+      "rhythmic_dictation": "Dictado Rítmico",
+      "melodic_dictation": "Dictado Melódico",
+      "rhythm_styles": "Estilos de Ritmo",
+      "music_appreciation": "Apreciación Musical",
+      "instrument_analysis": "Análisis de Instrumentos"
     }
   },
   "he": {
     "translation": {
       "title": "מורה לקצב",
       "description": "למד מוזיקה בחינם עם תרגילים אינטראקטיביים ותווים.",
-      "donate": "תרום"
+      "donate": "תרום",
+      "theory": "תיאוריה מוזיקלית",
+      "solfege": "סולפג'יו",
+      "harmony": "הרמוניה",
+      "rhythmic_dictation": "דיקטציה קצבית",
+      "melodic_dictation": "דיקטציה מלודית",
+      "rhythm_styles": "סגנונות קצב",
+      "music_appreciation": "הערכת מוזיקה",
+      "instrument_analysis": "ניתוח כלים"
     }
   },
   "en": {
     "translation": {
       "title": "Rhythm Teacher",
       "description": "Learn music for free with interactive exercises and sheet music.",
-      "donate": "Donate"
+      "donate": "Donate",
+      "theory": "Music Theory",
+      "solfege": "Solfege",
+      "harmony": "Harmony",
+      "rhythmic_dictation": "Rhythmic Dictation",
+      "melodic_dictation": "Melodic Dictation",
+      "rhythm_styles": "Rhythm Styles",
+      "music_appreciation": "Music Appreciation",
+      "instrument_analysis": "Instrument Analysis"
+    }
+  },
+  "pt": {
+    "translation": {
+      "title": "Professor de Ritmo",
+      "description": "Aprenda música gratuitamente com exercícios interativos e partituras.",
+      "donate": "Doar",
+      "theory": "Teoria Musical",
+      "solfege": "Solfejo",
+      "harmony": "Harmonia",
+      "rhythmic_dictation": "Ditado Rítmico",
+      "melodic_dictation": "Ditado Melódico",
+      "rhythm_styles": "Estilos de Ritmo",
+      "music_appreciation": "Apreciação Musical",
+      "instrument_analysis": "Análise de Instrumentos"
+    }
+  },
+  "fr": {
+    "translation": {
+      "title": "Professeur de Rythme",
+      "description": "Apprenez la musique gratuitement avec des exercices interactifs et des partitions.",
+      "donate": "Faire un don",
+      "theory": "Théorie Musicale",
+      "solfege": "Solfège",
+      "harmony": "Harmonie",
+      "rhythmic_dictation": "Dictée Rythmique",
+      "melodic_dictation": "Dictée Mélodique",
+      "rhythm_styles": "Styles Rythmiques",
+      "music_appreciation": "Appréciation Musicale",
+      "instrument_analysis": "Analyse d'Instruments"
+    }
+  },
+  "it": {
+    "translation": {
+      "title": "Insegnante di Ritmo",
+      "description": "Impara la musica gratuitamente con esercizi interattivi e spartiti.",
+      "donate": "Dona",
+      "theory": "Teoria Musicale",
+      "solfege": "Solfeggio",
+      "harmony": "Armonia",
+      "rhythmic_dictation": "Dettato Ritmico",
+      "melodic_dictation": "Dettato Melodico",
+      "rhythm_styles": "Stili Ritmici",
+      "music_appreciation": "Apprezzamento Musicale",
+      "instrument_analysis": "Analisi degli Strumenti"
+    }
+  },
+  "ja": {
+    "translation": {
+      "title": "リズム教師",
+      "description": "インタラクティブな練習と楽譜で無料で音楽を学びます。",
+      "donate": "寄付",
+      "theory": "音楽理論",
+      "solfege": "ソルフェージュ",
+      "harmony": "和声",
+      "rhythmic_dictation": "リズムディクテーション",
+      "melodic_dictation": "メロディックディクテーション",
+      "rhythm_styles": "リズムのスタイル",
+      "music_appreciation": "音楽鑑賞",
+      "instrument_analysis": "楽器分析"
+    }
+  },
+  "ko": {
+    "translation": {
+      "title": "리듬 교사",
+      "description": "대화형 연습과 악보로 무료로 음악을 배웁니다.",
+      "donate": "기부",
+      "theory": "음악 이론",
+      "solfege": "솔페지",
+      "harmony": "화성",
+      "rhythmic_dictation": "리듬 받아쓰기",
+      "melodic_dictation": "멜로디 받아쓰기",
+      "rhythm_styles": "리듬 스타일",
+      "music_appreciation": "음악 감상",
+      "instrument_analysis": "악기 분석"
     }
   }
 }
