@@ -1,0 +1,15 @@
+name: Notify NotebookLM Upload
+on:
+  push:
+    paths:
+      - 'docs/**'
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Send Notification
+        run: |
+          curl -X POST -H 'Content-Type: application/json' \
+          -d "{\"text\": \"New NotebookLM output uploaded to docs/!\"}" \
+          ${{ secrets.WEBHOOK_URL }}
