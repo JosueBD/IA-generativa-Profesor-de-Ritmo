@@ -1,0 +1,11 @@
+{
+  "title": "Rhythm Teacher",
+  "description": "A generative AI for learning music and rhythm for free, accessible worldwide.",
+  "theory": "Music Theory",
+  "donate": "Support the Project",
+  "add_c4": "Add C (C4)",
+  "add_d4": "Add D (D4)",
+  "add_e4": "Add E (E4)",
+  "add_f4": "Add F (F4)",
+  "play_notes": "Play Notes"
+}
