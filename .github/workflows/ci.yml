@@ -28,6 +28,8 @@ jobs:
           ls -la public || echo "ERROR: public directory not found"
           echo "Listing i18n directory:"
           ls -la i18n || echo "ERROR: i18n directory not found"
+          echo "Checking .gitignore:"
+          cat .gitignore || echo "ERROR: .gitignore not found"
           echo "Checking package.json:"
           cat package.json || echo "ERROR: package.json not found"
           echo "Checking vite.config.js:"
@@ -40,6 +42,18 @@ jobs:
           cat i18n/es.json || echo "ERROR: i18n/es.json not found"
           echo "Checking i18n/he.json:"
           cat i18n/he.json || echo "ERROR: i18n/he.json not found"
+          echo "Checking i18n/en.json:"
+          cat i18n/en.json || echo "ERROR: i18n/en.json not found"
+          echo "Checking i18n/pt.json:"
+          cat i18n/pt.json || echo "ERROR: i18n/pt.json not found"
+          echo "Checking i18n/fr.json:"
+          cat i18n/fr.json || echo "ERROR: i18n/fr.json not found"
+          echo "Checking i18n/it.json:"
+          cat i18n/it.json || echo "ERROR: i18n/it.json not found"
+          echo "Checking i18n/ja.json:"
+          cat i18n/ja.json || echo "ERROR: i18n/ja.json not found"
+          echo "Checking i18n/ko.json:"
+          cat i18n/ko.json || echo "ERROR: i18n/ko.json not found"
           echo "Checking public/index.html:"
           cat public/index.html || echo "ERROR: public/index.html not found"
 
@@ -51,12 +65,19 @@ jobs:
       - name: Install dependencies
         run: |
           echo "Running npm ci:"
-          npm ci || { echo "ERROR: npm ci failed"; exit 1; }
+          npm ci || { echo "ERROR: npm ci failed"; cat npm-debug.log || echo "No npm-debug.log found"; exit 1; }
 
       - name: Verify installed dependencies
         run: |
           echo "Listing installed dependencies:"
           npm list --depth=0 || echo "ERROR: npm list failed"
+
+      - name: Check Node and npm versions
+        run: |
+          echo "Node version:"
+          node --version
+          echo "npm version:"
+          npm --version
 
       - name: Check Vite config
         run: |
