@@ -22,6 +22,8 @@ jobs:
         run: |
           echo "Listing repository contents:"
           ls -la
+          echo "Listing src directory:"
+          ls -la src || echo "ERROR: src directory not found"
           echo "Checking package.json:"
           cat package.json || echo "ERROR: package.json not found"
           echo "Checking vite.config.js:"
@@ -30,6 +32,11 @@ jobs:
           cat src/App.jsx || echo "ERROR: src/App.jsx not found"
           echo "Checking public/index.html:"
           cat public/index.html || echo "ERROR: public/index.html not found"
+
+      - name: Clean npm cache
+        run: |
+          echo "Cleaning npm cache:"
+          npm cache clean --force
 
       - name: Install dependencies
         run: |
