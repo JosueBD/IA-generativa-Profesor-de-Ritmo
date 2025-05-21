@@ -32,6 +32,8 @@ jobs:
           cat .gitignore || echo "ERROR: .gitignore not found"
           echo "Checking package.json:"
           cat package.json || echo "ERROR: package.json not found"
+          echo "Checking package-lock.json:"
+          cat package-lock.json || echo "ERROR: package-lock.json not found"
           echo "Checking vite.config.js:"
           cat vite.config.js || echo "ERROR: vite.config.js not found"
           echo "Checking src/App.jsx:"
