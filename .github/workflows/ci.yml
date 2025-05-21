@@ -26,6 +26,8 @@ jobs:
           ls -la src || echo "ERROR: src directory not found"
           echo "Listing public directory:"
           ls -la public || echo "ERROR: public directory not found"
+          echo "Listing i18n directory:"
+          ls -la i18n || echo "ERROR: i18n directory not found"
           echo "Checking package.json:"
           cat package.json || echo "ERROR: package.json not found"
           echo "Checking vite.config.js:"
@@ -74,7 +76,7 @@ jobs:
           ls -la dist/assets || echo "ERROR: dist/assets directory not found"
 
       - name: Deploy to GitHub Pages
-        uses: actions/checkout@v4
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
