@@ -1,0 +1,11 @@
+{
+  "title": "Profesor de Ritmo",
+  "description": "Una IA generativa para aprender música y ritmo de forma gratuita, accesible en todo el mundo.",
+  "theory": "Teoría Musical",
+  "donate": "Apoya el Proyecto",
+  "add_c4": "Añadir Do (C4)",
+  "add_d4": "Añadir Re (D4)",
+  "add_e4": "Añadir Mi (E4)",
+  "add_f4": "Añadir Fa (F4)",
+  "play_notes": "Reproducir Notas"
+}
