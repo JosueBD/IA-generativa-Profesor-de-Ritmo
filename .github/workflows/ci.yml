@@ -41,6 +41,11 @@ jobs:
           echo "Listing installed dependencies:"
           npm list --depth=0 || echo "ERROR: npm list failed"
 
+      - name: Check Vite config
+        run: |
+          echo "Checking vite.config.js content:"
+          cat vite.config.js || echo "ERROR: vite.config.js not found"
+
       - name: Build
         run: |
           echo "Running npm run build:"
@@ -54,6 +59,8 @@ jobs:
           ls -la dist || echo "ERROR: dist directory not found"
           echo "Checking dist/index.html:"
           cat dist/index.html || echo "ERROR: index.html not found in dist"
+          echo "Checking dist/assets:"
+          ls -la dist/assets || echo "ERROR: dist/assets directory not found"
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
