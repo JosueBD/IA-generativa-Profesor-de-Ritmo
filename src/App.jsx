@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as Vex from 'vexflow';
 import * as Tone from 'tone';
 import { useTranslation } from 'react-i18next';
+import axios from 'axios';
 
 const App = () => {
   const { t, i18n } = useTranslation();
@@ -12,6 +13,7 @@ const App = () => {
     new Vex.Flow.StaveNote({ clef: 'treble', keys: ['e/4'], duration: 'q' }),
     new Vex.Flow.StaveNote({ clef: 'treble', keys: ['f/4'], duration: 'q' }),
   ]);
+  const [lesson, setLesson] = useState(null);
 
   useEffect(() => {
     const VF = Vex.Flow;
@@ -26,11 +28,16 @@ const App = () => {
     voice.addTickables(notes);
     new VF.Formatter().joinVoices([voice]).format([voice], 400);
     voice.draw(context, stave);
+
+    // Fetch lesson from backend
+    axios.get('https://profesor-de-ritmo-backend.onrender.com/lesson/beginner/es')
+      .then(response => setLesson(response.data))
+      .catch(error => console.error('Error fetching lesson:', error));
   }, [notes]);
 
   const addNote = (key) => {
     const newNote = new Vex.Flow.StaveNote({ clef: 'treble', keys: [key], duration: 'q' });
-    setNotes([...notes, newNote].slice(-4)); // Mantener solo las últimas 4 notas
+    setNotes([...notes, newNote].slice(-4));
   };
 
   const playNotes = async () => {
@@ -45,6 +52,9 @@ const App = () => {
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    axios.get(`https://profesor-de-ritmo-backend.onrender.com/lesson/beginner/${lng}`)
+      .then(response => setLesson(response.data))
+      .catch(error => console.error('Error fetching lesson:', error));
   };
 
   return (
@@ -94,6 +104,17 @@ const App = () => {
           Play Notes
         </button>
       </div>
+      {lesson && (
+        <div className="mt-4">
+          <h2 className="text-xl font-bold">{t('theory')}</h2>
+          <p>{lesson.theory.question}</p>
+          <ul>
+            {lesson.theory.options.map((option, index) => (
+              <li key={index}>{option}</li>
+            ))}
+          </ul>
+        </div>
+      )}
       <p className="mt-4">{t('description')}</p>
       <a href="https://paypal.me/profesorderitmo" className="mt-4 p-2 bg-green-500 text-white rounded">
         {t('donate')}
