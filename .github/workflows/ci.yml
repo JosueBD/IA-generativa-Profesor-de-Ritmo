@@ -36,6 +36,10 @@ jobs:
           cat src/App.jsx || echo "ERROR: src/App.jsx not found"
           echo "Checking src/index.jsx:"
           cat src/index.jsx || echo "ERROR: src/index.jsx not found"
+          echo "Checking i18n/es.json:"
+          cat i18n/es.json || echo "ERROR: i18n/es.json not found"
+          echo "Checking i18n/he.json:"
+          cat i18n/he.json || echo "ERROR: i18n/he.json not found"
           echo "Checking public/index.html:"
           cat public/index.html || echo "ERROR: public/index.html not found"
 
